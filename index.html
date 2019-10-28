@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WoW WoW</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <button type="button" id="btn">WHO AM I ?</button>
+
+        <div id="result"></div>
+
+    </div>
+    
+
+    <script>
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+        btn.addEventListener("click", function() {
+
+            fetch("http://localhost:4000/api/who-are-you", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    result.innerHTML = `
+                    
+                        <h1>${ data.result.name }</h1>
+
+                        <img src="${ data.result.photo}" alt="human" />
+
+
+                    `;
+                })
+
+        })
+    </script>
+</body>
+</html>
