@@ -16,12 +16,19 @@
 
     </div>
     
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 
     <script>
-        const btn = document.getElementById("btn");
-        const result = document.getElementById("result");
 
-        btn.addEventListener("click", function() {
+        $(document).ready(function() {
+
+            const btn = $("#btn");
+            const result = $("#result");
+
+            btn.on("click", function() {
 
             fetch("https://farrux.herokuapp.com/api/who-are-you", {
                 method: "GET",
@@ -31,17 +38,23 @@
             })
                 .then(res => res.json())
                 .then(data => {
-                    result.innerHTML = `
+                    result.html(`
                     
                         <h1>${ data.result.name }</h1>
 
                         <img src="${ data.result.photo}" alt="human" />
 
 
-                    `;
+                    `);
                 })
 
+            })
+
         })
+
+    
     </script>
+
+
 </body>
 </html>
