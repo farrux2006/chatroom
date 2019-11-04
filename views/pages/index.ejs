@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WoW WoW</title>
+    <% include ../../partials/head %>
 </head>
+
 <body>
 
     <div class="container">
 
-        <button type="button" id="btn">WHO AM I IN NEXT LIFE ?</button>
+        <button type="button" id="btn">WHO AM I ?</button>
 
         <div id="result"></div>
-        <a href="/chat">chat room</a>
+
+        <a href="/chat" id="chat-room">Chat room</a>
 
     </div>
-    
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
 
-    <script>
+    <div class="auth">
 
-        $(document).ready(function() {
+        <input type="text" class="inpt username-inp" placeholder="username">
+        <input type="email" class="inpt useremail-inp" placeholder="email">
+        <input type="password" class="inpt userpassword-inp" placeholder="password">
 
-            const btn = $("#btn");
-            const result = $("#result");
+        <button type="button" class="register-btn">Register</button>
 
-            btn.on("click", function() {
+    </div>
 
-            fetch("https://farrux.herokuapp.com/api/who-are-you", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    result.html(`
-                    
-                        <h1>${ data.result.name }</h1>
+    <div class="auth">
 
-                        <img src="${ data.result.photo}" alt="human" />
+        <input type="email" class="inpt email-inp" placeholder="email">
+        <input type="password" class="inpt pass-inp" placeholder="password">
 
+        <button type="button" class="login-btn">Login</button>
 
-                    `);
-                })
+    </div>
 
-            })
+    <div class="logout">
 
-        })
-
-    
-    </script>
-
+        <button type="button" id="logout">logout</button>
+    </div>
 
 </body>
+
 </html>
