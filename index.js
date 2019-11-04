@@ -27,7 +27,7 @@ app.get("/chat", (req, res) => {
 });
 
 mongoose.connect(
-  "mongodb+srv://farrux:supermen@cluster0-75qh6.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb://farrux:supermen2006@ds241968.mlab.com:41968/farrux",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
