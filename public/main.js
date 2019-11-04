@@ -18,6 +18,7 @@ $(document).ready(function() {
     $("#chat-room").hide();
   }
   const socket = io("https://farrux.herokuapp.com");
+  console.log(socket);
 
   $(".button").on("click", function() {
     const val = $(".input").val();
