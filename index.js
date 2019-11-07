@@ -39,3 +39,5 @@ mongoose.connect(
 http.listen(process.env.PORT || 4000, () => {
   console.log("server ready on port 4000");
 });
+
+console.log("hello");
