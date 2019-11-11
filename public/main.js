@@ -2,9 +2,21 @@ $(document).ready(function() {
   const me = localStorage.getItem("user");
   const myUser = me !== null && parseJwt(me);
 
-  if (window.location.pathname === "/chat") {
+  if (
+    window.location.pathname === "/chat" ||
+    window.location.pathname === "/room"
+  ) {
     if (!me) {
       window.location.href = "/";
+    }
+  }
+
+  if (
+    window.location.pathname === "/" ||
+    window.location.pathname === "/register"
+  ) {
+    if (me) {
+      window.location.href = "/room";
     }
   }
 
@@ -81,28 +93,27 @@ $(document).ready(function() {
 
   // celebreties
 
-  const btn = document.getElementById("btn");
+  // const btn = document.getElementById("btn");
   const result = document.getElementById("result");
 
-  btn.addEventListener("click", function() {
-    fetch("http://localhost:4000/api/who-are-you", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        result.innerHTML = `
-                
-                    <h1>${data.result.name}</h1>
+  // btn.addEventListener("click", function() {
+  //   fetch("http://localhost:4000/api/who-are-you", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       result.innerHTML = `
 
-                    <img src="${data.result.photo}" alt="human" />
+  //                   <h1>${data.result.name}</h1>
 
+  //                   <img src="${data.result.photo}" alt="human" />
 
-                `;
-      });
-  });
+  //               `;
+  //     });
+  // });
 
   // register
   function parseJwt(token) {
@@ -133,12 +144,13 @@ $(document).ready(function() {
         $("#logout").show();
         const usr = parseJwt(res.data.user.token);
         localStorage.setItem("user", res.data.user.token);
-        window.location.href = "/";
+        window.location.href = "/room";
       })
       .catch(err => console.log("err", err.response));
   });
 
-  $(".login-btn").on("click", () => {
+  $("button.login-btn").on("click", () => {
+    console.log("aasdasd");
     formData.email = $(".email-inp").val();
     formData.password = $(".pass-inp").val();
 
@@ -146,7 +158,7 @@ $(document).ready(function() {
       $("#logout").show();
       const usr = parseJwt(res.data.user.token);
       localStorage.setItem("user", res.data.user.token);
-      window.location.href = "/";
+      window.location.href = "/room";
     });
   });
 

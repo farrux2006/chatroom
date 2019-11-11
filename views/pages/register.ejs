@@ -17,19 +17,23 @@
             <h1>Welcome</h1>
             <div class="input-1">
                 <label for="user"></label>
-                <input type="text" placeholder="Email" name="user" id="username" class="email-inp">
+                <input type="text" placeholder="Username" name="user" id="username" class="username-inp">
                 <i class="fas fa-user"></i>
             </div>
             <div class="input-2">
-                <label for="parol"></label>
-                <input type="password" placeholder="Password" name="parol" id="password" class="pass-inp">
+                <label for="email"></label>
+                <input type="email" placeholder="Email" name="email" id="email" class="useremail-inp">
                 <i class="fas fa-lock"></i>
             </div>
-            <div class="forgot-pass-login">
-                <a href="/register"><small>Register</small></a>
-                <small id="forgot">Forgot Password?</small>
+            <div class="input-3">
+                <label for="parol"></label>
+                <input type="password" placeholder="Password" name="parol" id="password-2" class="userpassword-inp">
+                <i class="fas fa-lock"></i>
             </div>
-            <button type="button" class="login-btn">LOGIN</button>
+            <div class="forgot-pass">
+                <a href="/"><small>Login</small></a>
+            </div>
+            <button type="button" id="login" class="register-btn">Register</button>
         </div>
     </div>
     <dialog class="dialog">
@@ -43,7 +47,6 @@
             <div class="line-2"></div>
         </div>
     </dialog>
-
 </body>
 
 </html>

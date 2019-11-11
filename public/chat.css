@@ -9,6 +9,7 @@ body {
 
 body {
   margin: 0;
+  display: block !important;
 }
 
 .chat-wrap {
@@ -21,6 +22,8 @@ body {
 .chat-body {
   padding: 10px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .time-ava {
@@ -139,4 +142,17 @@ body {
 
 .my-chat-card:last-child {
   border-bottom: none;
+}
+
+.navigation {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid orange;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
 }

@@ -23,6 +23,14 @@ app.get("/", (req, res) => {
   res.render("pages/index");
 });
 
+app.get("/register", (req, res) => {
+  res.render("pages/register");
+});
+
+app.get("/room", (req, res) => {
+  res.render("pages/room");
+});
+
 app.get("/chat", (req, res) => {
   res.render("pages/chat");
 });

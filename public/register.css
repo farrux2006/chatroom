@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+#wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 750px;
+}
+.container {
+  display: flex;
+  width: 700px;
+  justify-content: space-around;
+}
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img img {
+  width: 350px;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-container img {
+  width: 75px;
+  margin-bottom: 15px;
+}
+.login-container h1 {
+  margin-bottom: 15px;
+  font-size: 36px;
+}
+.login-container .input-1,
+.login-container .input-2,
+.login-container .input-3 {
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+}
+.login-container .input-1 input,
+.login-container .input-2 input {
+  width: 250px;
+  height: 40px;
+  padding: 5px 10px 5px 40px;
+  border: 0;
+  border-bottom: 2px solid #38d39f;
+  outline: none;
+  font-size: 16px;
+}
+.login-container .input-3 input {
+  width: 250px;
+  height: 40px;
+  padding: 5px 10px 5px 40px;
+  border: 0;
+  border-bottom: 2px solid #38d39f;
+  outline: none;
+  font-size: 16px;
+}
+.login-container .input-1 svgi,
+.login-container .input-2 svg,
+.login-container .input-3 svg {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: grey;
+}
+.login-container .forgot-pass {
+  width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.login-container .forgot-pass small {
+  cursor: pointer;
+}
+.login-container .forgot-pass small:hover {
+  color: #38d39f;
+}
+.login-container button {
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid #2e28ad;
+  background: #38d39f;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #151515;
+}
+.login-container button:hover {
+  background: #53dbae;
+  color: white;
+}
+
+dialog {
+  width: 500px;
+  height: 300px;
+  box-shadow: 0 0 20px black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  transform: scale(0);
+}
+.dialog-open {
+  animation: dialog-open 0.3s ease forwards;
+}
+.dialog-close {
+  animation: dialog-close 0.3s ease forwards;
+}
+@keyframes dialog-open {
+  from {
+    transform: scale(0);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: scale(1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes dialog-close {
+  from {
+    transform: scale(1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+.dialog img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+.dialog .verify {
+  display: flex;
+}
+.dialog .verify #send {
+  width: 75px;
+  background: #38d39f;
+  border: 0;
+  outline: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+.dialog input {
+  width: 225px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #38d39f;
+  padding: 5px 10px 5px 10px;
+  font-size: 14px;
+  border-radius: 5px 0 0 5px;
+}
+.dialog .x {
+  padding: 5px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+}
+.dialog .x .line-1 {
+  transform: rotate(135deg);
+}
+.dialog .x .line-2 {
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 5px;
+}
+.dialog .x .line-1,
+.dialog .x .line-2 {
+  width: 25px;
+  height: 5px;
+  background: #38d39f;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 970px) {
+  #wave {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 385px) {
+  .container .img {
+    display: none;
+  }
+}

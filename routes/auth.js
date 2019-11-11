@@ -36,6 +36,8 @@ router.post(
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
 
+  console.log("accept");
+
   Users.findOne({ email }).then(user => {
     if (user && user.isValidPassword(password)) {
       res.json({ user: user.toAuth() });
