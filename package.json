@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "heroku": "git add . && git commit -m 'push' && git push heroku master",
+    "git:push": "git add . && git commit -m 'push' && git push origin master",
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
