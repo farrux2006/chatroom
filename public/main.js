@@ -166,4 +166,10 @@ $(document).ready(function() {
     localStorage.removeItem("user");
     window.location.href = "/";
   });
+
+  // clean chat
+
+  $(".btn-clean").on("click", function() {
+    socket.emit("clean-history", {});
+  });
 });

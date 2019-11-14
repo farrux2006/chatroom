@@ -178,3 +178,18 @@ body {
 .navigation a:hover {
   background-color: #dedede;
 }
+
+.btn-clean-chat button {
+  background-color: white;
+  border: none;
+  padding: 12px 15px;
+}
+
+.btn-clean-chat button:hover {
+  background-color: #dedede;
+}
+
+.wrapper {
+  padding: 50px;
+  margin-top: 50px;
+}

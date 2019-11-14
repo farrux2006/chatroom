@@ -17,6 +17,8 @@ module.exports = function(io) {
       });
     });
 
+    // clean chat
+
     socket.on("get-history", async () => {
       let chatHistory = await Chat.find({});
 

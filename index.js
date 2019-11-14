@@ -35,6 +35,10 @@ app.get("/chat", (req, res) => {
   res.render("pages/chat");
 });
 
+app.get("/admin", (req, res) => {
+  res.render("pages/admin");
+});
+
 mongoose.connect(
   "mongodb://farrux:supermen2006@ds241968.mlab.com:41968/farrux",
   {

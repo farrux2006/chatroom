@@ -23,9 +23,9 @@ body {
   width: 750px;
 }
 .container {
+  margin-top: 50px;
   display: flex;
-  width: 700px;
-  justify-content: space-around;
+  padding: 50px;
 }
 .img {
   display: flex;
