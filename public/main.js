@@ -178,6 +178,14 @@ $(document).ready(function() {
   });
 
   // send pass to email
-  $(".femail-inp").on("click", function() {});
-  //test
+
+  $(".femail-inp").on("keypress", async function(e) {
+    if (e.which == 13) {
+      const email = $(this).val();
+
+      await axios
+        .post("/api/reset", { email })
+        .then(res => console.log(res.data));
+    }
+  });
 });

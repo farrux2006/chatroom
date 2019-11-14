@@ -1,6 +1,8 @@
 const express = require("express");
 const Users = require("../models/authModel");
 const { check, validationResult } = require("express-validator");
+const nodemailer = require("nodemailer");
+const bcrypt = require("bcryptjs");
 
 const router = express.Router();
 
@@ -45,6 +47,40 @@ router.post("/login", (req, res) => {
       res
         .status(400)
         .json({ errors: { global: { notFound: "User not found" } } });
+    }
+  });
+});
+
+router.post("/reset", async (req, res) => {
+  const { email } = req.body;
+
+  function setup() {
+    return nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: "elcinmehher123@gmail.com",
+        pass: "elcin12345"
+      }
+    });
+  }
+
+  await Users.findOne({ email }, (err, findedUser) => {
+    if (err) {
+      console.log(err);
+      res.json({ error: "User not found!" });
+    } else {
+      const tranport = setup();
+
+      const em = {
+        from: `from Chatroom`,
+        to: email,
+        subject: "reset password",
+        text: `http://localhost:4000/reset/?email=${email}`
+      };
+
+      tranport.sendMail(em);
     }
   });
 });
