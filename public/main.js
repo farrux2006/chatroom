@@ -176,4 +176,8 @@ $(document).ready(function() {
   $(".btn-clean").on("click", function() {
     socket.emit("clean-history", {});
   });
+
+  // send pass to email
+  $(".femail-inp").on("click", function() {});
+  //test
 });
