@@ -24,6 +24,7 @@ body {
   overflow: auto;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .time-ava {

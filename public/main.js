@@ -10,7 +10,7 @@ $(document).ready(function() {
       window.location.href = "/";
     }
   }
-
+  console.log(myUser);
   if (
     window.location.pathname === "/" ||
     window.location.pathname === "/register"
@@ -18,6 +18,10 @@ $(document).ready(function() {
     if (me) {
       window.location.href = "/room";
     }
+  }
+
+  if (window.location.pathname === "/admin" && myUser.role === 0) {
+    window.location.href = "/room";
   }
 
   if (me) {

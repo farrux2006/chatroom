@@ -6,7 +6,8 @@ const uniqueValidator = require("mongoose-unique-validator");
 const schema = new mongoose.Schema({
   email: { type: String, unique: true },
   username: { type: String },
-  password: { type: String }
+  password: { type: String },
+  role: { type: Number, default: 0 }
 });
 
 schema.methods.setPassword = function setPassword(password) {
@@ -21,7 +22,8 @@ schema.methods.generateJWT = function generateJWT() {
   return jwt.sign(
     {
       username: this.username,
-      email: this.email
+      email: this.email,
+      role: this.role
     },
     "thesecretisopened",
     { expiresIn: "6h" }

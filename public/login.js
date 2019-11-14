@@ -79,6 +79,7 @@
 //   });
 
 //   $(".login-container .forgot-pass #forgot").click(function() {
+//     console.log("aaa");
 //     toggle = false;
 
 //     if (toggle === false) {
